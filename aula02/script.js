@@ -67,3 +67,17 @@ var str = window.prompt("Digite uma palavra e o programa contará quantas letras
 var v5 = str.length
 
 console.log(v5)
+
+
+//Ex6
+console.log("")
+console.log("Exercício 6:")
+console.log("")
+
+var srt = window.prompt("Digite uma palavra:")
+
+var arrSrt = srt.split("")
+
+var arrN = arrSrt.reverse()
+
+console.log(arrN.join(""))
