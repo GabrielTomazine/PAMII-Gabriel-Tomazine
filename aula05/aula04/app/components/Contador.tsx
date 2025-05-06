@@ -1,56 +1,54 @@
-import React from "react";
-import {Text, Button, View, StyleSheet} from 'react-native';
+import React from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default class Contador extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            Contador: 0,
-        };
+  constructor() {
+    super();
+    this.state = {
+      contador: 0,
     };
-}
-Decrementar() {
+  }
+  Decrementar() {
     this.setState({
-        Contador: this.state.Contador - 1
+      contador: this.state.contador - 1
     });
-}
-Incrementar() {
+  }
+  Incrementar() {
     this.setState({
-        contador: this.state.contador + 1
+      contador: this.state.contador + 1
     });
-}
-render() {
+  }
+  render() {
     return (
-        <View>
-            <View style={styles.texto}>
-                <Text>{this.state.contador}</Text>
-            </View>
-            <View style={styles.botoes}>
-                <Button
-                    style={styles.botao1}
-                    title="Aumenta"
-                    onPress={this.Incrementar.bind(this)}
-                />
-                <Button
-                    style={styles.botao2}
-                    title="Diminui"
-                    onPress={this.Incrementar.bind(this)}
-                />
-            </View>
-            </View>
-    );
-}
-
+      <View>
+        <View style={styles.texto}>
+          <Text>{this.state.contador}</Text>
+        </View>
+        <View style={styles.botoes}>
+          <Button
+            style={styles.botao1}
+            title="Aumenta"
+            onPress={this.Incrementar.bind(this)}
+          />
+          <Button
+            style={styles.botao2}
+            onPress={this.Decrementar.bind(this)}
+            title="Diminui"
+          />
+        </View>
+      </View>
+    );  } }
+    
 const styles = StyleSheet.create({
-    botoes: {
-        display: 'flex',
-        flexDirection; 'row',
-        alignSelf: 'center',
-        top: 220,
-        height: 40,
-    },
-    texto: {
-        alignItems: 'center',
-        top: 200,
-    },
+  botoes: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'center',
+    top: 220,
+    height: 40,
+  },
+  texto: {
+    alignItems: 'center',
+    top: 200,
+  },
 });
